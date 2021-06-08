@@ -12,7 +12,7 @@ const formValues = {
     mobile: '',
     city: '',
     gender: 'male',
-    departmentId: '',
+    age: '',
     hireDate: new Date(),
     isPermanent: false
 }
@@ -22,6 +22,12 @@ const genderItems = [
     {id:1, name:'female', title:'Female' },
     {id:2, name:'other', title:'Others' },
 ];
+
+const ageItems = [
+    {id:0, name:'Ten', value:10 },
+    {id:1, name:'Twenty', value:20 },
+    {id:2, name:'Thirty', value:30 },
+]
 
 const AddPropertyForm = () => {
 
@@ -58,6 +64,14 @@ const AddPropertyForm = () => {
                             items={genderItems}
                         >
                         </Controls.RadioGroup>
+                        <Controls.Select
+                            label="Age"
+                            name="age"
+                            value={values.age}
+                            onChange={handleInputChange}
+                            items={ageItems}
+                        > 
+                        </Controls.Select>
                     
                     </Grid>
                     
