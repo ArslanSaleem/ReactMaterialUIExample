@@ -17,6 +17,13 @@ const Select = (props) => {
                 value={value}
                 onChange={onChange}
                 label={label}
+                MenuProps={{
+                    anchorOrigin: {
+                      vertical: "bottom",
+                      horizontal: "left"
+                    },
+                    getContentAnchorEl: null
+                  }}
             >
                 {
                     items.map(

@@ -1,6 +1,5 @@
 import { Grid} from '@material-ui/core';
 import React from 'react';
-// import Input from '../components/Controls/Input';
 import { useForm, Form }  from '../components/useForm';
 import Controls from '../components/Controls/Controls';
 
@@ -11,22 +10,23 @@ const formValues = {
     email: '',
     mobile: '',
     city: '',
-    gender: 'male',
+    category: 'rent',
     age: '',
     hireDate: new Date(),
-    isPermanent: false
+    documents: false
 }
 
-const genderItems = [
-    {id:0, name:'male', title:'Male' },
-    {id:1, name:'female', title:'Female' },
-    {id:2, name:'other', title:'Others' },
+const categoryItems = [
+    {id:0, name:'rent', title:'Rent' },
+    {id:1, name:'sale', title:'Sale' }
 ];
 
-const ageItems = [
-    {id:0, name:'Ten', value:10 },
-    {id:1, name:'Twenty', value:20 },
-    {id:2, name:'Thirty', value:30 },
+const areaItems = [
+    {id:0, name:'5 Marla', value:5 },
+    {id:1, name:'7 Marla', value:7 },
+    {id:2, name:'10 Marla', value:10 },
+    {id:2, name:'15 Marla', value:15 },
+    {id:2, name:'20 Marla', value:20 },
 ]
 
 const AddPropertyForm = () => {
@@ -40,7 +40,7 @@ const AddPropertyForm = () => {
                     <Grid item xs={6}> 
                         <Controls.Input
                             variant='outlined'
-                            label="Full Name"
+                            label="Owner Name"
                             name="fullName"
                             value={values.fullName}
                             onChange={handleInputChange}
@@ -57,21 +57,28 @@ const AddPropertyForm = () => {
                     </Grid>
                     <Grid item xs={6}>
                         <Controls.RadioGroup
-                            label="Gender"
-                            name="gender"
-                            value={values.gender}
+                            label="Category"
+                            name="category"
+                            value={values.category}
                             onChange={handleInputChange}
-                            items={genderItems}
+                            items={categoryItems}
                         >
                         </Controls.RadioGroup>
                         <Controls.Select
-                            label="Age"
-                            name="age"
-                            value={values.age}
+                            label="Area"
+                            name="area"
+                            value={values.area}
                             onChange={handleInputChange}
-                            items={ageItems}
+                            items={areaItems}
                         > 
                         </Controls.Select>
+                        <Controls.CheckBox
+                            label="Documents"
+                            name="documents" 
+                            value={values.documents}
+                            onChange={handleInputChange}
+                        >
+                        </Controls.CheckBox>
                     
                     </Grid>
                     
