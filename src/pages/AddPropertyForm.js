@@ -54,6 +54,12 @@ const AddPropertyForm = () => {
                             onChange={handleInputChange}
                         >
                         </Controls.Input>
+                        <Controls.DatePicker
+                            name="hireDate"
+                            label="Purchase Date"
+                            value={values.hireDate}
+                            onChange={handleInputChange}
+                        ></Controls.DatePicker>
                     </Grid>
                     <Grid item xs={6}>
                         <Controls.RadioGroup
