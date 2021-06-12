@@ -4,6 +4,7 @@ import Select from "./Select";
 import CheckBox from "./CheckBox";
 import DatePicker from "./DatePicker";
 import FileUploader from "./FileUploader";
+import Button from "./Button";
 
 const Controls = {
     Input,
@@ -11,7 +12,8 @@ const Controls = {
     Select,
     CheckBox,
     DatePicker,
-    FileUploader
+    FileUploader,
+    Button
 }
  
 export default Controls;

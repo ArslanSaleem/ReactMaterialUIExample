@@ -11,7 +11,7 @@ const formValues = {
     mobile: '',
     city: '',
     category: 'rent',
-    age: '',
+    area: '',
     hireDate: new Date(),
     documents: false,
     files: []
@@ -32,8 +32,33 @@ const areaItems = [
 
 const AddPropertyForm = () => {
 
-    const { values, setValues, handleInputChange } = useForm(formValues); 
-   
+    const validate = (updatedValues) => {
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const temp = {...errors}
+        if ('fullName' in updatedValues) {
+            temp.fullName = updatedValues.fullName? '': 'Field Required';
+        }
+        if ('email' in updatedValues) {
+            temp.email = re.test(String(updatedValues.email).toLowerCase())? '': 'Invalid Email address';
+        }
+        if ('area' in updatedValues) {
+            temp.area = updatedValues.area? '': 'Field Required';
+        }
+
+         setErrors({
+            ...temp
+        })
+        if (updatedValues == values)
+            return Object.values(temp).every(x => x == "")
+    }
+
+    const { values, setValues, errors, setErrors, handleInputChange } = useForm(formValues, true, validate); 
+
+    const handleSubmit= () => {
+        if (validate(values)) {
+            console.log("Form Submitted");
+        }
+    }
 
     return ( 
             <Form>
@@ -45,6 +70,7 @@ const AddPropertyForm = () => {
                             name="fullName"
                             value={values.fullName}
                             onChange={handleInputChange}
+                            error={errors.fullName}
                         >
                         </Controls.Input>
                         <Controls.Input
@@ -53,6 +79,7 @@ const AddPropertyForm = () => {
                             name="email"
                             value={values.email}
                             onChange={handleInputChange}
+                            error={errors.email}
                         >
                         </Controls.Input>
                         <Controls.DatePicker
@@ -77,6 +104,7 @@ const AddPropertyForm = () => {
                             value={values.area}
                             onChange={handleInputChange}
                             items={areaItems}
+                            error={errors.area}
                         > 
                         </Controls.Select>
                         <Controls.CheckBox
@@ -90,13 +118,21 @@ const AddPropertyForm = () => {
                     </Grid>
                     
                 </Grid>
-                <Grid container style={{padding:'10px'}}> 
+                <Grid container > 
                 <Controls.FileUploader
                             name="files"
                             label="Upload Images"
                             value={values.files}
                             onChange={handleInputChange}
                         ></Controls.FileUploader>
+                </Grid>
+                <Grid container style={{justifyContent:'center', margin:'20px'}}> 
+                    <Controls.Button
+                        name="submit"
+                        label="Submit"
+                        onClick={handleSubmit}
+                    >
+                    </Controls.Button>
                 </Grid>
             </Form>
         );

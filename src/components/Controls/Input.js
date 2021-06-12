@@ -4,7 +4,7 @@ import React from 'react';
 
 const Input = (props) => {
 
-    const { name, label, value, onChange } = props;
+    const { name, label, value, error=null, onChange } = props;
     return ( 
         <TextField
             variant='outlined'
@@ -12,6 +12,7 @@ const Input = (props) => {
             name={name}
             value={value}
             onChange={onChange}
+            {...error && { error:true, helperText:error} }
         >
         </TextField>
     );

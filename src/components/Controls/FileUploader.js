@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {DropzoneArea} from 'material-ui-dropzone'
-import { FormLabel } from '@material-ui/core';
+import { FormControl, FormLabel } from '@material-ui/core';
 
 
 const FileUploader = (props) => {
@@ -15,10 +15,12 @@ const FileUploader = (props) => {
     
     return ( 
         <>  
-            <FormLabel style={{marginBottom: '10px'}}> {label} </FormLabel>
-            <DropzoneArea
-                onChange={ e => onChange(onEventCall(e))}
-            />
+            <FormControl variant='outlined' style={{width:'100%'}}>
+                <FormLabel style={{marginBottom: '10px'}}> {label} </FormLabel>
+                <DropzoneArea
+                    onChange={ e => onChange(onEventCall(e))}
+                />
+            </FormControl>
         </>
     );
 }

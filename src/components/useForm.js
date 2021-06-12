@@ -1,9 +1,11 @@
 import { makeStyles } from '@material-ui/core';
+import { validate } from '@material-ui/pickers';
 import React, { useState } from 'react';
 
 
-export function useForm(initialValues) {
+export function useForm(initialValues, validateOnChange = false, validate) {
     const [values, setValues ] = useState(initialValues);
+    const [errors, setErrors ] = useState(initialValues);
 
     const handleInputChange = ( e ) => {
         const { name, value } = e.target
@@ -11,12 +13,17 @@ export function useForm(initialValues) {
             ...values,
             [name]: value
         });
+        if (validateOnChange ) {
+            validate({ [name]: value})
+        }
     }
 
     return {
         values,
         setValues,
-        handleInputChange
+        errors,
+        setErrors,
+        handleInputChange,
     };
 }
 
