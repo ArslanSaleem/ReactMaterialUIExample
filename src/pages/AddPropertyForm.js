@@ -133,6 +133,7 @@ const AddPropertyForm = () => {
                             value={values.files}
                             onChange={handleInputChange}
                             error={errors.files}
+                            filesLimit={6} 
                         ></Controls.FileUploader>
                 </Grid>
                 <Grid container style={{justifyContent:'center', margin:'20px'}}> 
