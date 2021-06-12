@@ -1,4 +1,4 @@
-# Getting Started with React Router Example
+# Getting Started with React Material UI Example
 
 This example has the basic implementation of Material UI theme design and Material UI form Controls.
 
