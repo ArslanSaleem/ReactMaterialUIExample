@@ -13,7 +13,8 @@ const formValues = {
     category: 'rent',
     age: '',
     hireDate: new Date(),
-    documents: false
+    documents: false,
+    files: []
 }
 
 const categoryItems = [
@@ -88,6 +89,14 @@ const AddPropertyForm = () => {
                     
                     </Grid>
                     
+                </Grid>
+                <Grid container style={{padding:'10px'}}> 
+                <Controls.FileUploader
+                            name="files"
+                            label="Upload Images"
+                            value={values.files}
+                            onChange={handleInputChange}
+                        ></Controls.FileUploader>
                 </Grid>
             </Form>
         );

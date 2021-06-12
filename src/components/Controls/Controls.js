@@ -3,13 +3,15 @@ import RadioGroup from "./RadioGroup";
 import Select from "./Select";
 import CheckBox from "./CheckBox";
 import DatePicker from "./DatePicker";
+import FileUploader from "./FileUploader";
 
 const Controls = {
     Input,
     RadioGroup,
     Select,
     CheckBox,
-    DatePicker
+    DatePicker,
+    FileUploader
 }
  
 export default Controls;
