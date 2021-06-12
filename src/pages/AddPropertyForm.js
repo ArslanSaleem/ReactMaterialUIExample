@@ -33,6 +33,10 @@ const areaItems = [
 const AddPropertyForm = () => {
 
     const validate = (updatedValues) => {
+
+        console.log("is Called");
+        console.log(updatedValues);
+
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         const temp = {...errors}
         if ('fullName' in updatedValues) {
@@ -43,6 +47,9 @@ const AddPropertyForm = () => {
         }
         if ('area' in updatedValues) {
             temp.area = updatedValues.area? '': 'Field Required';
+        }
+        if ('files' in updatedValues) {
+            temp.files = updatedValues.files.length>0? '': 'Upload atleast on image';
         }
 
          setErrors({
@@ -55,6 +62,7 @@ const AddPropertyForm = () => {
     const { values, setValues, errors, setErrors, handleInputChange } = useForm(formValues, true, validate); 
 
     const handleSubmit= () => {
+        console.log("in Submit");
         if (validate(values)) {
             console.log("Form Submitted");
         }
@@ -124,6 +132,7 @@ const AddPropertyForm = () => {
                             label="Upload Images"
                             value={values.files}
                             onChange={handleInputChange}
+                            error={errors.files}
                         ></Controls.FileUploader>
                 </Grid>
                 <Grid container style={{justifyContent:'center', margin:'20px'}}> 
