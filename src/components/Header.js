@@ -7,7 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const styles = makeStyles({
     root: {
-        background: 'primary',
+        background: 'primary'
     }, 
     searchBar: {
         opacity:'0.8',
@@ -35,7 +35,7 @@ const Header = () => {
 
     const classes = styles();
     return ( 
-        <AppBar position="static" className={classes.root}>
+        <AppBar position="sticky" className={classes.root}>
             <Toolbar >
                 <Grid container style={ {alignItems:'center', justify:'center', boxSizing: 'content-box' }}>
                     <Grid item className= {classes.logo} > 

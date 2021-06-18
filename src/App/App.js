@@ -4,7 +4,8 @@ import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core';
 import Header from '../components/Header';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AddProperty from '../pages/AddProperty';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ViewProperties from '../pages/ViewProperties';
 
 
 const styles = makeStyles ({
@@ -44,14 +45,24 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header/>
+      <Router>
       <SideMenu/>
-      <div className={classes.appMain}>
-          <AddProperty/>
+        <div className={classes.appMain}>
+          
+              <Switch>
+                <Route path="/" exact component={AddProperty} />
+                <Route path="/view" exact component={ViewProperties} />
+
+              </Switch>
+              </div>
+      </Router>
         
-      </div>
+      
     <CssBaseline />
+    
 
     </ThemeProvider>
+    
   );
 }
 

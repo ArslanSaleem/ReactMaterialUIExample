@@ -9,7 +9,7 @@ const AddProperty = () => {
     return ( 
         <>
             <PageHeader
-            title="Add Property"
+            title="Add New Property"
             description="Enter details to post your Property Ad"
             icon= {<HomeIcon></HomeIcon>}
             />

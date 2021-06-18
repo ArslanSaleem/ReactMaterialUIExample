@@ -2,6 +2,7 @@ import { Grid} from '@material-ui/core';
 import React from 'react';
 import { useForm, Form }  from '../components/useForm';
 import Controls from '../components/Controls/Controls';
+import { storeProperty }  from '../services/PropertyService';
 
 
 const formValues = {
@@ -32,13 +33,10 @@ const areaItems = [
 
 const AddPropertyForm = () => {
 
-    const validate = (updatedValues) => {
-
-        console.log("is Called");
-        console.log(updatedValues);
+    const validate = (updatedValues=values) => {
 
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const temp = {...errors}
+        let temp = {...errors}
         if ('fullName' in updatedValues) {
             temp.fullName = updatedValues.fullName? '': 'Field Required';
         }
@@ -55,16 +53,18 @@ const AddPropertyForm = () => {
          setErrors({
             ...temp
         })
+
         if (updatedValues == values)
+            console.log(temp);
             return Object.values(temp).every(x => x == "")
     }
 
     const { values, setValues, errors, setErrors, handleInputChange } = useForm(formValues, true, validate); 
 
-    const handleSubmit= () => {
-        console.log("in Submit");
-        if (validate(values)) {
-            console.log("Form Submitted");
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        if (validate()) {
+            storeProperty(values);
         }
     }
 

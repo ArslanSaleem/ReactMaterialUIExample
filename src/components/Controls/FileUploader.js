@@ -27,8 +27,6 @@ const FileUploader = (props) => {
             name, value
         }
     });
-
-    console.log(others);
     
     return ( 
         <>  
