@@ -18,7 +18,7 @@ This example has the basic implementation of Material UI theme design, Material 
 ![Alt text](https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png?raw=true =250x250 "Main Page")
 ![Alt text](https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/table_view.png?raw=true =250x250 "Table Page")
 
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png" width="200" height="400" />
+<img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png" width="200" height="400" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
