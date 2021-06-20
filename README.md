@@ -16,8 +16,8 @@ This example has the basic implementation of Material UI theme design, Material 
 
 ## Application Views
 <div >
-  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png" width="500" height="300" />
-  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/table_view.png" width="500" height="300" />
+  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png" width="400" height="300" />
+  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/table_view.png" width="400" height="300" />
  </div
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
