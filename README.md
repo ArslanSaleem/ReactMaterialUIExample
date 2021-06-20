@@ -15,7 +15,8 @@ This example has the basic implementation of Material UI theme design, Material 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ArslanSaleem/ReactRouterExample/blob/main/LICENSE)
 
 ## Application Views
-![Alt text](https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png?raw=true "Main Page")
+![Alt text](https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png?raw=true =250x250 "Main Page")
+![Alt text](https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/table_view.png?raw=true =250x250 "Table Page")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
