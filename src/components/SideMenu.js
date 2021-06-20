@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Paper } from "@material-ui/core";
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import ViewListIcon from '@material-ui/icons/ViewList';
 
@@ -34,9 +34,15 @@ const styles =  makeStyles ({
             textDecoration:'none'
         },
         '& li a:hover': {
-            backgroundColor: 'cadetblue'
+            backgroundColor: '#477678'
+        },
+        '.selected': {
+            background:'cadetblue'
         }
 
+    },
+    linkActive: {
+        background:'cadetblue'
     }
 });
 
@@ -49,9 +55,17 @@ const SideMenu = () => {
                 <div>
                     <ul className={classes.link}> 
                         <li>
-                            <Link  to="/"> <HomeIcon/><span>Add New Property</span></Link> 
+                            <NavLink exact activeClassName={classes.linkActive} to="/"> 
+                                <HomeIcon/>
+                                <span>Add New Property</span>
+                            </NavLink> 
                         </li>
-                        <li><Link to="/view"> <ViewListIcon/> <span>View Properties</span></Link> </li>
+                        <li>
+                            <NavLink exact activeClassName={classes.linkActive} to="/view">
+                                <ViewListIcon/>
+                                <span>View Properties</span>
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             

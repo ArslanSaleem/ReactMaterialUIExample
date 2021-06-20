@@ -22,13 +22,6 @@ const theme = createMuiTheme({
       main: '#132853',
       light: '#3c44b126'
     },
-    // secondary: {
-    //   main: '#fff',
-    //   light: '#f8324526'
-    // },
-    // background: {
-    //   default: '#fff'
-    // }
   },
   overrides: {
     MuiAppBar: {

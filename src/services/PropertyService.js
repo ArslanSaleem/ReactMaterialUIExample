@@ -12,7 +12,6 @@ export function storeProperty (data) {
     localStorage.setItem(KEYS.properties, JSON.stringify(properties));
 }
 
-
 export function getProperties () {
     if (localStorage.getItem(KEYS.properties) == null)
         localStorage.setItem(KEYS.properties, JSON.stringify([]))
