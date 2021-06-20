@@ -33,7 +33,7 @@ const areaItems = [
 
 const AddPropertyForm = () => {
 
-    const validate = (updatedValues=values) => {
+    const validate = (updatedValues=values, isSubmit=false) => {
 
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         let temp = {...errors}
@@ -46,7 +46,7 @@ const AddPropertyForm = () => {
         if ('area' in updatedValues) {
             temp.area = updatedValues.area? '': 'Field Required';
         }
-        if ('files' in updatedValues) {
+        if ('files' in updatedValues && isSubmit) {
             temp.files = updatedValues.files.length>0? '': 'Upload atleast on image';
         }
 
@@ -63,7 +63,7 @@ const AddPropertyForm = () => {
 
     const handleSubmit= (e) => {
         e.preventDefault();
-        if (validate()) {
+        if (validate(values, true)) {
             storeProperty(values);
         }
     }
