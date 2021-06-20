@@ -1,6 +1,6 @@
 # Getting Started with React Material UI Example
 
-This example has the basic implementation of Material UI theme design, Material UI form Controls and basic validation.
+This example has the basic implementation of Material UI theme design, Material UI form Controls, Tables and basic form validation.
 
 1. Input Field
 2. CheckBox
@@ -8,6 +8,7 @@ This example has the basic implementation of Material UI theme design, Material 
 4. Image Uploader
 5. Radio Group
 6. Select
+7. Table with sorting, pagination and search
 
 [![Node](https://img.shields.io/badge/node-14.17.0-green.svg)](https://nodejs.org/en/download/)
 [![npm](https://img.shields.io/badge/npm-6.14.13-green.svg)](https://nodejs.org/en/download/)
