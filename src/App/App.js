@@ -1,5 +1,5 @@
 import './App.css';
-import SideMenu from '../components/SideMenu';
+import Menu from '../components/Menu';
 import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core';
 import Header from '../components/Header';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,12 +8,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ViewProperties from '../pages/ViewProperties';
 
 
-const styles = makeStyles ({
+const styles = makeStyles ((theme)=> ({
   appMain : {
-    paddingLeft: '300px',
-    width: '100%'
+    paddingLeft: '250px',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '0px'
+    }
   }
-})
+}))
 
 
 const theme = createMuiTheme({
@@ -37,9 +40,10 @@ function App() {
   let classes = styles();
   return (
     <ThemeProvider theme={theme}>
-      <Header/>
+      
       <Router>
-      <SideMenu/>
+      <Menu/>
+      
         <div className={classes.appMain}>
           
               <Switch>
