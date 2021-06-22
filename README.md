@@ -14,6 +14,12 @@ This example has the basic implementation of Material UI theme design, Material 
 [![npm](https://img.shields.io/badge/npm-6.14.13-green.svg)](https://nodejs.org/en/download/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ArslanSaleem/ReactRouterExample/blob/main/LICENSE)
 
+## Application Views
+<div >
+  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/main.png" width="400" height="300" />
+  <img src="https://github.com/ArslanSaleem/ReactMaterialUIExample/blob/main/app_views/table_view.png" width="400" height="300" />
+ </div
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
