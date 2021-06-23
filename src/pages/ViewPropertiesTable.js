@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import Controls from "../components/Controls/Controls";
 import { ContactsOutlined, Search } from "@material-ui/icons";
-import { InputAdornment, InputBase, makeStyles, TablePagination, Table, TableSortLabel } from "@material-ui/core";
+import { InputAdornment, InputBase, makeStyles, TablePagination, Table, TableSortLabel, Paper } from "@material-ui/core";
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
@@ -19,7 +19,8 @@ const useStyles = makeStyles({
     table: {
         minWidth: 650,
         maxHeight: 100,
-        marginTop: '20px'
+        marginTop: '20px',
+        overflowX:'auto'
     },
     tableHead: {
         background: '#132853',
@@ -115,7 +116,7 @@ const ViewPropertiesTable = () => {
                 value={searchText}
                 onChange={handleSearchOnChange}
             ></Controls.Input>
-
+            <Paper elevation={0} style={ {overflowX:'auto'}}>
             <Table className={classes.table} size="small" aria-label="a dense table"  >
                 <TableHead className={classes.tableHead}>
                     <TableRow >
@@ -152,6 +153,7 @@ const ViewPropertiesTable = () => {
                 </TableBody>
                 
             </Table>
+            </Paper>
             <TablePagination
                     rowsPerPageOptions={[5, 10, 25, 100]}
                     component="div"

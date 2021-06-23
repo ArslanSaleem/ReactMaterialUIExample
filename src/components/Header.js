@@ -59,19 +59,23 @@ const Header = (props) => {
                 >
                 <MenuIcon />
                 </IconButton>
-                    <Grid item sm={3} className= {classes.logo} > 
+                    <Grid item sm={2} className= {classes.logo} > 
                         <img src="logo.png" alt="logo" />
                     </Grid>
                     {
-                        !isMatch && (<Grid item sm={4} >
-                            <InputBase 
-                            placeholder="Search"
-                            className={classes.searchBar}
-                            startAdornment={<SearchIcon className={classes.searchBarIcon} />}></InputBase>
-                        </Grid>)
+                        !isMatch && (
+                            <>
+                            <Grid item sm={4} >
+                                <InputBase 
+                                placeholder="Search"
+                                className={classes.searchBar}
+                                startAdornment={<SearchIcon className={classes.searchBarIcon} />}></InputBase>
+                            </Grid>
+                            <Grid item sm/>
+                            </>
+                        )
                     }
                     
-                    <Grid item sm/>
                     <Grid item sm={1.5} className={classes.sideIconButtons}>
                         <IconButton>
                             <Badge badgeContent={4} color='secondary'>
